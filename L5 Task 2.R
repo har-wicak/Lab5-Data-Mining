@@ -18,6 +18,8 @@ library("rpart.plot")
 
 #import iris dataset
 library(datasets)
+head(iris)
+summary(iris)
 
 #holdout validation (1 train test split)
 #y is the outcome variable
@@ -46,5 +48,5 @@ rpart.plot(fitDT$finalModel)
 DT_predictions <- predict(fitDT$finalModel, newdata = iris_test, type = "class")
 DT_predictions
 
-#Create the confusionMatrix to evaluate the performance of the model
+#Create the confusion Matrix to evaluate the performance of the model
 confusionMatrix(DT_predictions, iris_test$Species)
